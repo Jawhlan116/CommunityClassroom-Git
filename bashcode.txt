@@ -1,0 +1,521 @@
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~
+$ cd project
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project
+$ git init
+Initialized empty Git repository in C:/Users/Admin/project/.git/
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ ls
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ ls -a
+./  ../  .git/
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ ls .git
+HEAD  config  description  hooks/  info/  objects/  refs/
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ touch names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        names.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   names.txt
+
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git commit -m "names.txt file added"
+[master (root-commit) 4b2c4d2] names.txt file added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ code names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ cat names.txt
+Community Classroom
+Jawhlan
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git restore --staged names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ gi add names.txt
+bash: gi: command not found
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git commit -m "names.txt files modified"
+[master c256176] names.txt files modified
+ 1 file changed, 2 insertions(+)
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git log
+commit c2561764ac0349d9926ecb9420ca1d89462afc0a (HEAD -> master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:05:32 2025 +0800
+
+    names.txt files modified
+
+commit 4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:00:02 2025 +0800
+
+    names.txt file added
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ rm -rf names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add .
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git commit -m "names.txt deleted"
+[master d2a62f2] names.txt deleted
+ 1 file changed, 2 deletions(-)
+ delete mode 100644 names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git log
+commit d2a62f237117885018333e397f84e805d962865b (HEAD -> master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:07:42 2025 +0800
+
+    names.txt deleted
+
+commit c2561764ac0349d9926ecb9420ca1d89462afc0a
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:05:32 2025 +0800
+
+    names.txt files modified
+
+commit 4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:00:02 2025 +0800
+
+    names.txt file added
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ ^C
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git reset  4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b
+Unstaged changes after reset:
+D       names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git log
+commit 4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b (HEAD -> master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:00:02 2025 +0800
+
+    names.txt file added
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add .
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ touch surnames.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add .
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    names.txt -> surnames.txt
+
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ code surnames.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ touch houses.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add .
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    names.txt -> houses.txt
+        new file:   surnames.txt
+
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git stash
+Saved working directory and index state WIP on master: 4b2c4d2 names.txt file added
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git log
+commit 4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b (HEAD -> master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:00:02 2025 +0800
+
+    names.txt file added
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ cat names.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git stash pop
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   houses.txt
+        new file:   surnames.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+Dropped refs/stash@{0} (60ca04cb9d1e12d27443944c5638bff63f999199)
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add .
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git stash
+Saved working directory and index state WIP on master: 4b2c4d2 names.txt file added
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git stash clean
+fatal: subcommand wasn't specified; 'push' can't be assumed due to unexpected token 'clean'
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git stash clear
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git remote add origin https://github.com/Jawhlan116/CommunityClassroom-Git.git
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git remore -v
+git: 'remore' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git remote -v
+origin  https://github.com/Jawhlan116/CommunityClassroom-Git.git (fetch)
+origin  https://github.com/Jawhlan116/CommunityClassroom-Git.git (push)
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 221 bytes | 221.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Jawhlan116/CommunityClassroom-Git.git
+ * [new branch]      master -> master
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ touch hotel.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add .
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git commit -m "hotel.txt added"
+[master e3a8d52] hotel.txt added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hotel.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ touch rollno.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add .
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git commit -m "roll number added"
+[master 3836c5a] roll number added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 rollno.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ code rollno.txt
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git add .
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git commit -m "rollno modified"
+[master 7fff723] rollno modified
+ 1 file changed, 1 insertion(+)
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git log
+commit 7fff723903a10bfffe368f331f9a58769a69d866 (HEAD -> master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:23:27 2025 +0800
+
+    rollno modified
+
+commit 3836c5ae9269418b900d2b10304912ecd95266af
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:22:22 2025 +0800
+
+    roll number added
+
+commit e3a8d52f5faee4ef8e34e638a8be76d1e9bb82d0
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:21:42 2025 +0800
+
+    hotel.txt added
+
+commit 4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b (origin/master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:00:02 2025 +0800
+
+    names.txt file added
+...skipping...
+commit 7fff723903a10bfffe368f331f9a58769a69d866 (HEAD -> master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:23:27 2025 +0800
+
+    rollno modified
+
+commit 3836c5ae9269418b900d2b10304912ecd95266af
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:22:22 2025 +0800
+
+    roll number added
+
+commit e3a8d52f5faee4ef8e34e638a8be76d1e9bb82d0
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:21:42 2025 +0800
+
+    hotel.txt added
+
+commit 4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b (origin/master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:00:02 2025 +0800
+
+    names.txt file added
+...skipping...
+commit 7fff723903a10bfffe368f331f9a58769a69d866 (HEAD -> master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:23:27 2025 +0800
+
+    rollno modified
+
+commit 3836c5ae9269418b900d2b10304912ecd95266af
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:22:22 2025 +0800
+
+    roll number added
+
+commit e3a8d52f5faee4ef8e34e638a8be76d1e9bb82d0
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:21:42 2025 +0800
+
+    hotel.txt added
+
+commit 4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b (origin/master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:00:02 2025 +0800
+
+    names.txt file added
+...skipping...
+commit 7fff723903a10bfffe368f331f9a58769a69d866 (HEAD -> master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:23:27 2025 +0800
+
+    rollno modified
+
+commit 3836c5ae9269418b900d2b10304912ecd95266af
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:22:22 2025 +0800
+
+    roll number added
+
+commit e3a8d52f5faee4ef8e34e638a8be76d1e9bb82d0
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:21:42 2025 +0800
+
+    hotel.txt added
+
+commit 4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b (origin/master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:00:02 2025 +0800
+
+    names.txt file added
+...skipping...
+commit 7fff723903a10bfffe368f331f9a58769a69d866 (HEAD -> master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:23:27 2025 +0800
+
+    rollno modified
+
+commit 3836c5ae9269418b900d2b10304912ecd95266af
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:22:22 2025 +0800
+
+    roll number added
+
+commit e3a8d52f5faee4ef8e34e638a8be76d1e9bb82d0
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:21:42 2025 +0800
+
+    hotel.txt added
+
+commit 4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b (origin/master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:00:02 2025 +0800
+
+    names.txt file added
+...skipping...
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+  b  ^B  ESC-v      *  Backward one window (or N lines).
+  z                 *  Forward  one window (and set window to N).
+  w                 *  Backward one window (and set window to N).
+  ESC-SPACE         *  Forward  one window, but don't stop at end-of-file.
+  d  ^D             *  Forward  one half-window (and set half-window to N).
+  u  ^U             *  Backward one half-window (and set half-window to N).
+  ESC-)  RightArrow *  Right one half screen width (or N positions).
+HELP -- Press RETURN for more, or q when done...skipping...
+commit 7fff723903a10bfffe368f331f9a58769a69d866 (HEAD -> master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:23:27 2025 +0800
+
+    rollno modified
+
+commit 3836c5ae9269418b900d2b10304912ecd95266af
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:22:22 2025 +0800
+
+    roll number added
+
+commit e3a8d52f5faee4ef8e34e638a8be76d1e9bb82d0
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:21:42 2025 +0800
+
+    hotel.txt added
+
+commit 4b2c4d2257699db9b2c8b5e39d9dbe0c54fafb1b (origin/master)
+Author: Jawhlan116 <jawkhlan2005@gmail.com>
+Date:   Wed Apr 9 10:00:02 2025 +0800
+
+    names.txt file added
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git branch feature
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (feature)
+$ git checkout master
+Switched to branch 'master'
+
+Admin@DESKTOP-7O4IF1R MINGW64 ~/project (master)
+$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 644 bytes | 644.00 KiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Jawhlan116/CommunityClassroom-Git.git
+   4b2c4d2..7fff723  master -> master
